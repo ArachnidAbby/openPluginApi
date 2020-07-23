@@ -7,6 +7,10 @@ def onEnable():
     print(f"loaded {name} version {version}")
     plugin.pinky()
 
+@plugin.render
+def render():
+    display.fill((255,255,255))
+
 @plugin.Disable
 def DisableFunction():
     plugin.pinky()
