@@ -4,8 +4,8 @@ global Nugget
 Nugget = "p"
 
 class myCustomPluginApi(ApiCreator.ApiTemplates.EnableDisableApi):
-    def __init__(self):
-        super().__init__('0.1','my first api')
+    def __init__(self,v,n):
+        super().__init__(version = v,name = n)
     def start(self):
         self.FUNCS['ENABLE']()
         self.FUNCS['DISABLE']()
