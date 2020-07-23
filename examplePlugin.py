@@ -1,12 +1,12 @@
-import example
-myPlugin = example.myCustomPluginApi()
+plugin = myCustomPluginApi()
 
-@api.Enable
+@plugin.Enable
 def onEnable():
-    api.print_funcs()
+    plugin.pinky()
 
-@api.Disable
+@plugin.Disable
 def DisableFunction():
+    plugin.pinky()
     print('pluginDisable')
 
-api.start()
+plugin.start()

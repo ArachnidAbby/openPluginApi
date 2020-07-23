@@ -1,3 +1,4 @@
 import OpenPluginApi.ApiCreator
 import OpenPluginApi.ApiCreator.ApiTemplates
+import OpenPluginApi.ApiCreator.PluginLoader
 import OpenPluginApi.PluginMaker
