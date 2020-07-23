@@ -1,1 +1,1 @@
-import OpenPluginApi.pluginMaker
+import OpenPluginApi.PluginMaker

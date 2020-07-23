@@ -1,2 +1,3 @@
 import OpenPluginApi.ApiCreator
-import OpenPluginApi.pluginMaker
+import OpenPluginApi.ApiCreator.ApiTemplates
+import OpenPluginApi.PluginMaker
