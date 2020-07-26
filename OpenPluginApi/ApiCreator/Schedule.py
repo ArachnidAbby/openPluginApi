@@ -13,8 +13,8 @@ class scheduler:
     def addEvent(self, name: str):
         self.SCHEDULED[name] = []
     
-    def schedule(self, eventName : str, pluginObj):
-        self.SCHEDULED[eventName].append([pluginObj.INFO["name"],pluginObj.FUNCS])
+    def schedule(self, eventName : str, pluginObj,func):
+        self.SCHEDULED[eventName].append({"name":pluginObj.INFO["name"],"func":func})
 
     def getScheduled(self, eventName: str):
         return self.SCHEDULED[eventName]
