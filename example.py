@@ -16,7 +16,7 @@ class myCustomPluginApi(ApiCreator.ApiTemplates.EnableDisableApi):
         print(foo)
         foo+="+"
     def render(self, func):
-        scheduler.schedule("render",self,func)
+        #scheduler.schedule("render",self,func)
         print("added render task")
     
 def main():
@@ -31,8 +31,8 @@ def main():
             if event.type ==pygame.QUIT:
                 pygame.quit()
                 quit()
-        for s in scheduler.getScheduled("render"):
-            s["func"]()
+        #for s in scheduler.getScheduled("render"):
+            #s["func"]()
         pygame.display.update()
 
 main()

@@ -15,10 +15,13 @@ class ExamplePluginApi(ApiCreator.ApiTemplates.EnableDisableApi):
     
     def render(self, func):
         scheduler.schedule("render", self, func)
+    def eventListener(self, func):
+        scheduler.schedule("event", self, func)
 
 def main():
     display = pygame.display.set_mode((600,600))
     scheduler.addEvent("render")
+    scheduler.addEvent("event")
     clock = pygame.time.Clock()
     d = dict(locals(),**globals())
     ApiCreator.PluginLoader.load("examplePlugin2.py",d,d)
@@ -28,6 +31,8 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+            for scheduled in scheduler.getScheduled("event"):
+                scheduled["func"](event)
         display.fill((255,255,255))
         for scheduled in scheduler.getScheduled("render"):
             scheduled["func"]()
