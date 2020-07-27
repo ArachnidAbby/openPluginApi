@@ -15,6 +15,6 @@ OpenPluginApi is for people who want a simple way to implement a plugin system i
 
 ***
 
-## documentatoin?
+## documentation?
 
 There is a wiki page on the github! This is a very simple package, so it shouldn't be hard to use!
