@@ -11,7 +11,7 @@ def OnDisable():
 
 @plugin.render
 def MyRenderFunction():
-    pygame.draw.rect(display, (0,0,0), [0, 0, plugin.myVar, plugin.myVar])
+    pygame.draw.rect(display, (0,0,0), [601-plugin.myVar, 601-plugin.myVar, plugin.myVar, plugin.myVar])
     plugin.myVar+=0.5
 
 @plugin.eventListener
