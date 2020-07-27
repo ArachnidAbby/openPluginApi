@@ -1,11 +1,11 @@
-from OpenPluginApi import ApiCreator
+import OpenPluginApi
 import pygame
-scheduler = ApiCreator.Schedule.scheduler()
+scheduler = Schedule.scheduler()
 
 global foo
 foo = "p"
 
-class myCustomPluginApi(ApiCreator.ApiTemplates.EnableDisableApi):
+class myCustomPluginApi(OpenPluginApi.ApiTemplates.EnableDisableApi):
     def __init__(self,v,n):
         super().__init__(version = v,name = n)
     def start(self):
@@ -16,7 +16,7 @@ class myCustomPluginApi(ApiCreator.ApiTemplates.EnableDisableApi):
         print(foo)
         foo+="+"
     def render(self, func):
-        #scheduler.schedule("render",self,func)
+        scheduler.schedule("render",self,func)
         print("added render task")
     
 def main():
@@ -24,15 +24,15 @@ def main():
     display = pygame.display.set_mode((600,600))
     clock = pygame.time.Clock()
     d = dict(locals(), **globals())
-    ApiCreator.PluginLoader.load("examplePlugin.py",d,d)
+    OpenPluginApi.PluginLoader.load("examplePlugin.py",d,d)
     while True:
         clock.tick(60)
         for event in pygame.event.get():
             if event.type ==pygame.QUIT:
                 pygame.quit()
                 quit()
-        #for s in scheduler.getScheduled("render"):
-            #s["func"]()
+        for s in scheduler.getScheduled("render"):
+            s["func"]()
         pygame.display.update()
 
 main()
