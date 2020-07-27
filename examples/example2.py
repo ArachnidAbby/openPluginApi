@@ -1,10 +1,10 @@
-from OpenPluginApi import ApiCreator
+import OpenPluginApi
 import pygame
 pygame.init()
 
-scheduler = ApiCreator.Schedule.scheduler()
+scheduler = OpenPluginApi.Schedule.scheduler()
 
-class ExamplePluginApi(ApiCreator.ApiTemplates.EnableDisableApi):
+class ExamplePluginApi(OpenPluginApi.ApiTemplates.EnableDisableApi):
     def __init__(self, title, desc, ver):
         super().__init__(version = ver, name = title)
         self.INFO["description"] = desc
@@ -24,7 +24,7 @@ def main():
     scheduler.addEvent("event")
     clock = pygame.time.Clock()
     d = dict(locals(),**globals())
-    ApiCreator.PluginLoader.loadFolder("TestPluginsFolder",d,d, recursive = True)
+    OpenPluginApi.PluginLoader.loadFolder("TestPluginsFolder",d,d, recursive = True)
     while True:
         clock.tick(20)
         for event in pygame.event.get():

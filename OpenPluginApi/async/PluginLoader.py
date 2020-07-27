@@ -24,7 +24,11 @@ async def loadFolder(FolderName: str, globals, locals, recursive = False):
             await loadFolder(FolderName+'/'+file, globals, locals, recursive = True)
 
 async def httpLoad(url: str, globals, locals):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as response:
-            data = await response.text()
-            exec(data,globals, locals)
+   async with aiohttp.ClientSession() as s:
+        async with s.get(url) as r:
+            if r.status == 200:
+                data = await r.text()
+                exec(data,globals, locals)
+                return True
+            else:
+                return False
