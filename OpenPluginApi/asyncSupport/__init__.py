@@ -1,5 +1,5 @@
-import OpenPluginApi.async
-import OpenPluginApi.async.PluginLoader
+import OpenPluginApi.asyncSupport
+import OpenPluginApi.asyncSupport.PluginLoader
 def help():
     message = """
 REQUIREMENTS:

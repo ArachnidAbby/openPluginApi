@@ -1,4 +1,4 @@
-import OpenPluginApi.async
+import OpenPluginApi.asyncSupport
 import OpenPluginApi.ApiTemplates
 import OpenPluginApi.PluginLoader
 import OpenPluginApi.Schedule
