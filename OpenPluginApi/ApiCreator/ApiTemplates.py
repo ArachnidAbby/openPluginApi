@@ -1,3 +1,13 @@
+def help():
+    message = """
+Api Templates.
+templates:
+  BlankApi
+  EnableDisableApi
+"""
+    print(message)
+    return message
+
 class BlankApi:
     def __init__(self, version  = "0.0.1", name = "My Plugin"):
         self.INFO = {'type':'blank', 'version':version, 'name':name}
