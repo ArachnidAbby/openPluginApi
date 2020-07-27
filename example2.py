@@ -24,7 +24,7 @@ def main():
     scheduler.addEvent("event")
     clock = pygame.time.Clock()
     d = dict(locals(),**globals())
-    ApiCreator.PluginLoader.load("examplePlugin2.py",d,d)
+    ApiCreator.PluginLoader.loadFolder("TestPluginsFolder",d,d, recursive = True)
     while True:
         clock.tick(20)
         for event in pygame.event.get():
