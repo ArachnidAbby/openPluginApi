@@ -5,10 +5,6 @@ import OpenPluginApi.Schedule
 
 def help():
     message = """
-REQUIREMENTS:
-  aiofiles
-  asyncio
-  aiohttp
 OPA:
   ApiTemplates
   PluginLoader
