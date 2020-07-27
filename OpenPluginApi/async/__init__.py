@@ -1,11 +1,7 @@
 import OpenPluginApi.async
-import OpenPluginApi.ApiTemplates
-import OpenPluginApi.PluginLoader
-import OpenPluginApi.Schedule
-
 def help():
     message = """
-OPA:
+OPA.async:
   ApiTemplates
   PluginLoader
   Schedule
