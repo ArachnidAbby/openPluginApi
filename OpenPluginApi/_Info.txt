@@ -2,6 +2,6 @@ This is a package created by github.com/spidertyler2005.
 
 This package is used in conjunction with python3 to create a basic plugin api.
 
-VERSION: 1.1.0
+VERSION: 1.1.1
 
-DATE OF RELEASE: 7/26/2020
+DATE OF RELEASE: 7/27/2020
