@@ -1,4 +1,5 @@
 import os
+
 def help():
     message = """
 Loads Plugins
@@ -17,4 +18,4 @@ def loadFolder(FolderName: str, globals, locals, recursive = False):
             with open(FolderName+'/'+file) as f:
                 exec(f.read(),globals, locals)
         elif recursive == True:
-            loadFolder(FolderName+'/'+file, globals, locals, recursive = False)
+            loadFolder(FolderName+'/'+file, globals, locals, recursive = True)
